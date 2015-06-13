@@ -6,31 +6,31 @@
 				<form role="form" name="register" method="POST" action="<?=base_url('users/register')?>">
 					<div class="form-group has-feedback">
 						<label class="control-label">E-Mail</label>
-						<input type="email" name="email" class="form-control" aria-invalid="true" placeholder="Электронный адресс" onchange="valid_email(this)">
+						<input type="email" name="email" class="form-control" aria-invalid="true" placeholder="E-Mail" onchange="valid_email(this)">
 						<span class="help-block sr-only"></span>
 						<span class="glyphicon glyphicon-ok form-control-feedback sr-only"></span>
 					</div>
 					<div class="form-group has-feedback">
-						<label>Пароль</label>
-						<input id="pass" type="password" name="password" class="form-control" aria-invalid="true" placeholder="Пароль" onchange="valid_password(this)" required maxlength="16">
+						<label>Password</label>
+						<input id="pass" type="password" name="password" class="form-control" aria-invalid="true" placeholder="Password" onchange="valid_password(this)" required maxlength="16">
 						<span class="help-block sr-only"></span>
 						<span class="glyphicon glyphicon-ok form-control-feedback sr-only"></span>
 					</div>
 					<div class="form-group has-feedback">
-						<label>Повторите пароль</label>
-						<input type="password" name="conf_password" class="form-control" aria-invalid="true" placeholder="Повторите пароль" onchange="valid_conf_password(this)" required maxlength="16">
+						<label>Confirm password</label>
+						<input type="password" name="conf_password" class="form-control" aria-invalid="true" placeholder="Confirm password" onchange="valid_conf_password(this)" required maxlength="16">
 						<span class="help-block sr-only"></span>
 						<span class="glyphicon glyphicon-ok form-control-feedback sr-only"></span>
 					</div>
 					<div class="form-group has-feedback">
-						<label>Имя</label>
-						<input type="text" name="first_name" class="form-control" aria-invalid="true" placeholder="Имя" onchange="valid_first_name(this)">
+						<label>First name</label>
+						<input type="text" name="first_name" class="form-control" aria-invalid="true" placeholder="First name" onchange="valid_first_name(this)">
 						<span class="help-block sr-only"></span>
 						<span class="glyphicon glyphicon-ok form-control-feedback sr-only"></span>
 					</div>
 					<div class="form-group has-feedback">
-						<label>Фамилия</label>
-						<input type="text" name="last_name" class="form-control" aria-invalid="true" placeholder="Фамилия" onchange="valid_last_name(this)">
+						<label>Last name</label>
+						<input type="text" name="last_name" class="form-control" aria-invalid="true" placeholder="Last name" onchange="valid_last_name(this)">
 						<span class="help-block sr-only"></span>
 						<span class="glyphicon glyphicon-ok form-control-feedback sr-only"></span>
 					</div>
