@@ -10,7 +10,8 @@ class Users extends MY_Controller {
 			redirect(base_url());
 		}elseif($this->input->post('password')){
 			// Logged
-			if ($this->data['User']->fetch(array('email' => $this->input->post('email'), 'password' => md5($this->input->post('password'))))) {
+			$this->load->library('encrypt');
+			if ($this->data['User']->fetch(array('email' => $this->input->post('email'), 'password' => $this->encrypt->encode($this->input->post('password'))))) {
 				$this->data['User']->login();
                 redirect(base_url());
 			}else{
@@ -54,10 +55,12 @@ class Users extends MY_Controller {
 			if ($this->form_validation->run()) {
 				// Register user
 
+				$this->load->library('encrypt');
+
 				$this->data['User']->set('email', 			$this->input->post('email'));
 				$this->data['User']->set('first_name', 		$this->input->post('first_name'));
 				$this->data['User']->set('last_name', 		$this->input->post('last_name'));
-				$this->data['User']->set('password', 		md5($this->input->post('password')));
+				$this->data['User']->set('password', 		$this->encrypt->encode($this->input->post('password')));
 				$this->data['User']->set('last_activity',	date("Y-m-d H:i:s"));
 				$this->data['User']->set('id_role', 2);
 				$this->data['User']->save();
