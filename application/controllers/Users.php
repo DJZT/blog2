@@ -11,7 +11,7 @@ class Users extends MY_Controller {
 		}elseif($this->input->post('password')){
 			// Logged
 			$this->load->library('encrypt');
-			if ($this->data['User']->fetch(array('email' => $this->input->post('email'), 'password' => $this->encrypt->encode($this->input->post('password'))))) {
+			if ($this->data['User']->fetch(array('email' => $this->input->post('email'))) && $this->encrypt->decode($this->data['User']->password) == $this->input->post('password')) {
 				$this->data['User']->login();
                 redirect(base_url());
 			}else{
